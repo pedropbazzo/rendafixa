@@ -1,0 +1,122 @@
+.painel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &-column {
+
+    &-title {
+      
+      &-content {
+        margin-bottom: 15px;
+        color: #140083;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      border: 1px solid #b3b1b1;
+      padding: 5%;
+      margin-bottom: 1.8vh;
+      width: 40vw;
+
+      &-slider {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        &-title {
+          margin-bottom: 10px;
+          color: #140083;
+        }
+
+        @media screen and (min-width: 1200px) {
+          &-slider {
+            width: 400px;
+          }
+        }
+
+        @media screen and (min-width: 900px) {
+          &-slider {
+            max-width: 400px;
+          }
+        }
+
+      }
+
+      &-value {
+        margin: 40px auto;
+        font-size: 2.2em;
+        font-family: moderat-thin,Helvetica,sans-serif;
+        color: #140083;
+      }
+    }
+
+    &-display {
+      
+      &-title {
+        margin-bottom: 20px;
+        color: #140083;
+      }
+
+      &-container {
+        border: 1px solid #b3b1b1;
+        min-width: 400px;
+
+        &-timer {
+          display: flex;
+          flex-direction: column;
+          padding: 15px;
+          color: #140083;
+
+          &-title {
+            text-align: center;
+            font-size: 1.3em;
+            color: #140083;
+          }
+
+          &-options {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            gap: 16px;
+            color: #140083;
+
+            &-content {
+              font-size: 1.3em;
+              font-weight: bold;
+              align-items: center;
+              color:#140083
+            }
+
+            &-button {
+              font-size: 25px;
+            }
+          }
+
+          &-result {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            
+
+            &-value {
+              text-align: right;
+              font-size: 36px;
+              color: #140083;
+            }
+
+            &-tax {
+              margin-top: 15px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

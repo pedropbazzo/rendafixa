@@ -1,0 +1,86 @@
+<div class="painel">
+
+  <div class="painel-column">
+
+    <header class="painel-column-title">
+      <h3 class="mat-display-3 painel-column-title-content">CDB ({{ taxaCDB | percent }})</h3>
+    </header>
+
+    <div class="painel-column-container">
+
+      <div class="painel-column-container-slider">
+        <h4 class="mat-display-1 painel-column-container-slider-title">
+          Aporte Inicial:
+        </h4>
+        <mat-slider #sliderInicial 
+          class="painel-column-container-slider-slider"
+          [min]="100" 
+          max="10000" step="100" 
+          [value]="100" (change)="atualizarAporteInicial(sliderInicial.value)">
+        </mat-slider>
+      </div>
+      <div class="painel-column-container-value">
+        <span>R$ {{ sliderInicial.value }}</span>
+      </div>
+    </div>
+
+    <div class="painel-column-container">
+      <div class="painel-column-container-slider">
+        <h4 class="mat-display-1 painel-column-container-slider-title">
+          Aplicação Mensal:
+        </h4>
+        <mat-slider #sliderMensal 
+          class="painel-column-container-slider-slider"
+          [min]="100" 
+          max="10000" step="100" 
+          [value]="100" (change)="atualizarAporteMensal(sliderMensal.value)">
+        </mat-slider>
+      </div>
+      <div class="painel-column-container-value">
+        <span>R$ {{ sliderMensal.value }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="painel-column">
+    <div class="painel-column-display">
+      <h3 class="mat-display-2 painel-column-display-title">Resultados</h3>
+      <div class="painel-column-display-container">
+        <div class="painel-column-display-container-timer">
+          <h4 class="painel-column-display-container-timer-title">
+            Duração:
+          </h4>
+
+          <div class="painel-column-display-container-timer-options">
+            <button mat-button (click)="subtrairDuracao()"
+              class="painel-column-display-container-timer-options-button">
+              -
+            </button>
+            <p class="painel-column-display-container-timer-options-content">
+              <span>{{duracaoEmAnos}}</span><span> {{ duracaoEmAnos>1? "anos": "ano" }}</span>
+            </p>
+            <button mat-button (click)="somarDuracao()"
+              class="painel-column-display-container-timer-options-button">
+              +
+            </button>
+          </div>
+
+          <div class="painel-column-display-container-timer-result">
+            <h3 class="mat-h3">
+              Saldo em {{ anoPrevisto.getFullYear() }}
+            </h3>
+            <span class="painel-column-display-container-timer-result-value">
+              {{(saldoPrevisto | currency:'BRL':true).replace('.', ',').replace(',', '.')}}
+            </span>
+            <span class="painel-column-display-container-timer-result-tax">
+              Taxa de {{ taxaAnual | percent }} anual.
+            </span>
+            <span>Total investido: {{ (totalInvestido | currency:'BRL':true).replace('.', ',').replace(',', '.') }}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

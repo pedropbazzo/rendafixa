@@ -1,0 +1,31 @@
+.app {
+
+  &-toolbar {
+    background-color: #EC7000;
+    color: #140083;
+    border: none;
+  }
+
+  //desktop
+  @media screen and (min-width: 780px) {
+
+    &-container {
+      max-width: 1200px;
+      min-height: 500px;
+      margin: 50px auto;
+    }
+  }
+
+  //mobile
+  @media screen and (max-width: 780px) {
+
+    &-container {
+      max-width: 900px;
+      min-height: 500px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+
